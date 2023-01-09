@@ -1,0 +1,64 @@
+$primary:(
+    Soft_orange: hsl(35, 77%, 62%),
+    Soft_red: hsl(5, 85%, 63%)
+);
+
+$neutral:(
+    Off-white: hsl(36, 100%, 99%),
+    Grayish_blue: hsl(233, 8%, 79%),
+    Dark_grayish_blue: hsl(236, 13%, 42%),
+    Very_dark_blue: hsl(240, 100%, 5%)
+);
+
+@function color($name){
+    @return map-get($primary, $name),
+            map-get($neutral, $name)
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:hover,
+*:hover::after,
+*:hover:before,
+*:focus::before,
+*:focus::after{
+    outline: none;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+a:hover,
+a::after,
+a::before{
+    text-decoration: none;
+    outline: none;
+}
+
+ul,
+ol{
+    list-style-type: none;
+}
+
+button, input[type="submit"]{
+    background: none;
+    border: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.wrapper{
+    max-width: 100vw;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
