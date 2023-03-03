@@ -1,29 +1,110 @@
 @import './utilities';
 
-.wrapper{
-    position: relative;
-    padding: 1.5em;
-    
-}
 .header{
+    position: relative;
     display: flex;
+    height: fit-content;
     justify-content: space-between;
-    padding-block: 1em;
+    padding-top: 3em;
+    padding-inline: 1.5em;
+    grid-column: span 3;
     .nav-bar{
+        position: absolute;
+        width: 60vw;
+        height: 100vh;
+        top: 0;
+        right: -100%;
         align-self: center;
+        background: color( Off-white);
+        z-index: 99;
+        transition: all .3s;
+        @media (min-width: 744px){
+            position: relative;
+            height: fit-content;
+            width: max-content;
+            background: none;
+            right: 0;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            padding: 2em;
+            margin-top: 10em;
+            gap: 2em;
+            @media (min-width: 744px){
+                flex-direction: row;
+                padding: 0;
+                margin-top: 0;
+            }
+            li{
+                font-size: 25px;
+                font-family: inter;
+                font-weight: 600;
+                @media (min-width: 744px){
+                    font-size: 14px;
+                    transition: all .5s;
+                    &:hover{
+                        color: color(Soft_red);
+                    }
+                }
+            }
+        }
+
+        
+    }
+    .layer{
+        position: absolute;
+        right: -100%;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        content: '';
+        background-color: rgba(8, 8, 8, 0.38);
+        z-index: 90;
+        transition: all .1;
+        
+        @media (min-width: 744px){
+            display: none;
+        }
+    }
+
+    .Hamburger{
+        z-index: 99;
+        @media (min-width: 744px){
+            display: none;
+        }
+        .open{
+            display: block;
+        }
+        .close{
+            display: none;
+        }
     }
 }
 .hero-page{
     display: flex;
     flex-direction: column;
     gap: 1em;
+    @media (min-width: 799px){
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+    }
+    img{
+        height: 40vh;
+        width: 100%;
+    }
     .heading{
         h1{
-            max-width: 70%;
+            max-width: 82%;
             font-size: 50px;
             font-family: inter;
             font-weight: 900;
             color: color( Very_dark_blue);
+            @media (min-width: 744px){
+                font-size: 34px;
+                width: 70%;
+                line-height: 160%;
+            }
         }
     }
     .paragraph{
@@ -34,6 +115,10 @@
             line-height: 150%;
             width: 85%;
             padding-bottom: 1em;
+            @media (min-width: 799px){
+                width: 100%;
+                font-size: 13px;
+            }
         }
         button{
             padding: 1.9em 9%;
@@ -43,24 +128,39 @@
             word-spacing: .1em;
             font-weight: 700;
             font-size: 17px;
+            @media (min-width: 799px){
+                font-size: 12px;
+                padding: 1.5em 5%;
+                transition: all .3s;
+                word-spacing: 120%;
+                &:hover{
+                    background-color: color( Very_dark_blue);
+                }
+            }
         }
     }
 }
 
 .questions{
     margin-block: 3.5em;
-    padding: 1.0em;
-    padding-inline: 1.5em;
-    background-color: color(Very_dark_blue);
+    padding-inline: 1.2em;
+    @media (min-width: 799px){
+       margin-block: 0;
+    }
     .question-list{
         display: flex;
         flex-direction: column;
         gap: 2em;
+        background-color: color(Very_dark_blue);
         h1{
             color: color(Soft_orange);
             font-family: inter;
             font-size: 40px;
-            padding-top: .3em;
+            padding-top: .8em;
+            @media (min-width: 799px){
+                font-size: 25px;
+                padding-top: .6em;
+             }
         }
         div:is(:nth-child(2), :nth-child(3)){
             border-bottom: 1px solid color(Off-white);
@@ -69,12 +169,24 @@
             color: color(Off-white);
             font-family: inter;
             font-size: 30px;
+            @media (min-width: 799px){
+                font-size: 15px;
+                transition: all .3s;
+                &:hover{
+                    color: color(Soft_orange);
+                }
+             }
         }
         p{
             color: color( Grayish_blue);
             font-family: inter;
-            font-size: 25px;
+            font-size: 21px;
             padding-block: 1.5em;
+            @media (min-width: 799px){
+                font-size: 11px;
+                padding-block: 1.2em;
+                line-height: 158%;
+             }
         }
     }
 }
@@ -82,32 +194,101 @@
 .services{
     padding-inline: 4%;
     padding-block: 2.5em;
-
+    grid-column: span 3;
+    
+    .service-list{
+        @media (min-width: 799px){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2em;
+         }
+    }
     .list-box{
         display: flex;
         gap: 1em;
-
+        margin-bottom: 2.6em;
         .img{
-            width: 30%;
-            height: 30%;
-            margin-bottom: 2em;
+            display: flex;
+            align-items: center;
+            width: 140px;
+            @media (min-width: 799px){
+                width: 80px;
+             }
+           
             img{
-                width: fit-content;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @media (min-width: 799px){
+                    width: 100%;
+                    height: 105%;
+                }
             }
+           
         }
+    }
+
+
+    .description{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: start;
+        gap: .7em;
+        @media (min-width: 799px){
+            gap: 0.4em;
+            justify-content: center;
+            width: 170%;
+          }
     }
 
     h1{
         font-family: inter;
-        font-size: 60px;
+        font-size: 40px;
         color: color(Grayish_blue);
+        @media (min-width: 799px){
+           font-size: 24px;
+          
+         }
     }
     h4{
         font-family: inter;
-        font-size: 30px;
+        font-size: 25px;
+        font-weight: 900;
         color: color(Very_dark_blue);
+        @media (min-width: 799px){
+            font-size: 13px;
+            transition: all .3s;
+            &:hover{
+             color: color(Soft_red);
+            }
+          }
     }
     p{
-        font-family: ;
+        font-family: inter;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 170%;
+        color: color(Dark_grayish_blue);
+        @media (min-width: 799px){
+            font-size: 11px;
+            line-height: 140%;
+          }
     }
+}
+
+
+#checkbox:checked ~ .Hamburger{
+    .open{
+        display: none;
+    }
+    .close{
+        display: block;
+    }
+}
+#checkbox:checked ~ .nav-bar{
+    right: 0;
+}
+#checkbox:checked ~ .layer{
+    right: 0;
 }

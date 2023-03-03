@@ -11,16 +11,34 @@
     
    <div class="wrapper">
         <header class="header">
+
+            <input type="checkbox" id="checkbox" class="none">
+
             <div class="logo">
                 <img src="./src/image/logo.svg" alt="logo">
             </div>
 
             <nav class="nav-bar">
-                <img src="./src/image/icon-menu.svg" alt="icon">
+                <ul class="side-bar" id="Side-bar" onclick="closeSideMenu">
+                    <li>Home</li>
+                    <li>New</li>
+                    <li>Popular</li>
+                    <li>Trending</li>
+                    <li>Categories</li>
+                </ul>
             </nav>
+
+            <span class="Hamburger">
+                <label for="checkbox">
+                    <img src="./src/image/icon-menu.svg" class="open" alt="icon">
+                <img src="src/image/icon-menu-close.svg" class="close" alt="">
+                </label>
+            </span>
+
+            <span class="layer"></span>
         </header>
 
-        <section id="hero" class="hero">
+        <section id="hero" class="hero pad">
             <div class="hero-page">
                 <div class="hero-img">
                     <img src="./src/image/image-web-3-mobile.jpg" alt="img">
@@ -37,13 +55,13 @@
                         fulfilling its promise?
                     </p>
 
-                    <button>READ MORE</button>
+                    <button class="btn">READ MORE</button>
                 </div>
             </div>
         </section>
 
-        <section class="questions">
-            <div class="question-list">
+        <section class="questions pad">
+            <div class="question-list pad">
                <h1>NEW</h1>
                <div>
                 <h3>Hydrogen VS Electric Cars</h3>
@@ -64,46 +82,53 @@
                </div>
             </div>
         </section>
+
+        <section class="services">
+            <div class="service-list">
+                    <div class="list-box">
+                        <div class="img">
+                            <img src="./src/image/image-retro-pcs.jpg" alt="">
+                        </div>
+    
+                        <div class="description">
+                            <h1>01</h1>
+                            <h4>Reviving Retro PCs</h4>
+                            <p>What happens when old PCs are given modern upgrades?</p>
+                        </div>
+                    </div>
+    
+                    <div class="list-box">
+                        <div class="img">
+                            <img src="./src/image/image-top-laptops.jpg" alt="">
+                        </div>
+    
+                        <div class="description">
+                            <h1>02</h1>
+                            <h4> Top 10 Laptops of 2022</h4>
+                            <p> Our best picks for various needs and budgets.</p>
+                        </div>
+                    </div>
+    
+                    <div class="list-box">
+                        <div class="img">
+                            <img src="./src/image/image-gaming-growth.jpg" alt="">
+                        </div>
+    
+                        <div class="description">
+                            <h1>03</h1>
+                            <h4>The Growth of Gaming</h4>
+                            <p>How the pandemic has sparked fresh opportunities.</p>
+                        </div>
+                    </div>
+            </div>
+       </section>
    </div> 
 
-   <section class="services">
-        <div class="service-list">
-                <div class="list-box">
-                    <div class="img">
-                        <img src="./src/image/image-retro-pcs.jpg" alt="">
-                    </div>
 
-                    <div class="description">
-                        <h1>01</h1>
-                        <h4>Reviving Retro PCs</h4>
-                        <p>What happens when old PCs are given modern upgrades?</p>
-                    </div>
-                </div>
 
-                <div class="list-box">
-                    <div class="img">
-                        <img src="./src/image/image-top-laptops.jpg" alt="">
-                    </div>
 
-                    <div class="description">
-                        <h1>02</h1>
-                        <h4> Top 10 Laptops of 2022</h4>
-                        <p> Our best picks for various needs and budgets.</p>
-                    </div>
-                </div>
-
-                <div class="list-box">
-                    <div class="img">
-                        <img src="./src/image/image-gaming-growth.jpg" alt="">
-                    </div>
-
-                    <div class="description">
-                        <h1>03</h1>
-                        <h4>The Growth of Gaming</h4>
-                        <p>How the pandemic has sparked fresh opportunities.</p>
-                    </div>
-                </div>
-        </div>
-   </section>
+   <script src="./src/js/vanilla-tilt.js"></script>
+   <script src="./src/js/scrollreveal.js"></script>
+   <script src="./src/js/index.js"></script>
 </body>
 </html>
